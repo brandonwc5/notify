@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Notify</title>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Righteous" rel="stylesheet">
+
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script type="text/javascript" src="assets/javascript/auth.js"></script>
+    <script type="text/javascript" src="assets/javascript/notify.js"></script>
+
+    <script type="text/javascript">
+
+      function initMap(){
+        console.log('')
+      }
+    </script>
+
+
+      <nav id="navbar">
+        <div class="row">
+          <div class="col-md-4">
+            <a class="navbar-brand" href="https://shapyro.github.io/notify/">
+            <img id="header-logo" src="assets/images/logo-purple.png" width="225px" height="100px" />
+            </a>
+          </div>
+          <div class="col-md-4">
+            <form>
+            <div class="form-group">
+               <select  class="form-control" id="city-drpdn">
+                <option>Choose a City</option>
+                <option>Albuquerque</option>
+                <option>Atlanta</option>
+                <option>Austin</option>
+                <option>Baltimore</option>
+                <option>Boston</option>
+                <option>Charlotte</option>
+                <option>Chicago</option>
+                <option>Cleveland</option>
+                <option>Colorado Springs</option>
+                <option>Columbus</option>
+                <option>Dallas</option>
+                <option>Denver</option>
+                <option>Detroit</option>
+                <option>El Paso</option>
+                <option>Fort Worth</option>
+                <option>Fresno</option>
+                <option>Honolulu</option>
+                <option>Houston</option>
+                <option>Indianapolis</option>
+                <option>Jacksonville</option>
+                <option>Kansas</option>
+                <option>Las Vegas</option>
+                <option>Long Beach</option>
+                <option>Los Angeles</option>
+                <option>Memphis</option>
+                <option>Mesa</option>
+                <option>Miami</option>
+                <option>Milwaukee</option>
+                <option>Minneapolis</option>
+                <option>Nashville-Davidson</option>
+                <option>New Orleans</option>
+                <option>New York</option>
+                <option>Oakland</option>
+                <option>Omaha</option>
+                <option>Philadelphia</option>
+                <option>Phoenix</option>
+                <option>Portland</option>
+                <option>Sacramento</option>
+                <option>San Antonio</option>
+                <option>San Diego</option>
+                <option>San Francisco</option>
+                <option>San Jose</option>
+                <option>Seattle</option>
+                <option>Tucson</option>
+                <option>Tulsa</option>
+                <option>Virginia Beach</option>
+                <option>Washington</option>
+                <option>Whichita</option>
+              </select>
+              <button id="submit" type="button" class="btn showme">Go!</button>
+            </div>
+          </form>
+          </div>
+
+           <!--********************  HEADER - AUTHENTICATION  ************************ -->
+
+          <!-- <div class ="authBar">logmein</div> -->
+          <div class="col-md-4" id="authContainer">
+            <div class ="authBar">
+              <div id ="blot">L</div>
+              <div id ="blot">O</div>
+              <div id ="blot">G</div>
+              <div id ="blot">I</div>
+              <div id ="blot">N</div>
+            </div>
+            <!-- <input type="email" id="txtEmail"  placeholder="Email">
+            <input type="password" id="txtPassword" placeholder="Password"><br>
+            <button id="btnLogin" class="btn btn-info">Log in</button>  
+            <div id="authBtnLayoutAndMessage">
+              <button id="btnSignUp" class="btn btn-warning hide">Sign Up</button>
+              <button id="btnLogout" class="btn btn-info hide">Log out</button>
+              <div id="authMessage"></div>
+            </div>
+          </div> -->
+        </div>  
+      </nav>
+
+    
+    <!--********************  CONTENT   ************************ -->
+
+    <div class="container-fluid">
+
+          <div class="row">
+            
+            <div class="col-lg-2 col-md-2 ">
+              <div id="left" class="adBanner">
+              <div><img src="assets/images/kiss.jpg" /></div> 
+              <div><img src="assets/images/sublime.jpg" /></div> 
+              <div><img src="assets/images/bowie.jpg" /></div> 
+              </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <div class="showlist">
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 ">
+              <div id="right" class="adBanner">
+                <div><img src="assets/images/bboys.jpg" /></div> 
+                <div><img src="assets/images/roky.jpg" /></div> 
+                <div><img src="assets/images/waits.jpg" /></div> 
+              </div>
+            </div>
+
+          </div>
+
+    </div>
+
+
+        <div id="map" style ="height: 400px;"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRATTUjfzqHd8GWYoogCWb3uZyJkNK-4&callback=initMap"></script>
+
+    
+
+    <!--********************   FOOTER   ************************ -->
+       <div class="footer">
+
+        <div id="main-ftr-row" class="row">
+          <div id="ftr-logo" class="col-md-4">
+            <img src="assets/images/logo-beige.png" width="112px" height="50px">
+          </div>
+          <div id="ftr-cpyrt" class="col-md-4">
+            <p class="text-center">
+              &copy; 2017 <br>
+              Brandon Shapyro, Greg Church, Brandon Cowart &amp; Jess Villasana
+            </p>
+          </div> 
+          <div class="col-md-4">
+            <div id="api-link-row" class="row">
+              <div class="col-sm-4">
+                This app powered by:
+              </div>
+              <div class="col-sm-4">
+                <img src="assets/images/songkick-logo.png" width="50px" height="50px">
+              </div>
+              <div class="col-sm-4">
+              </div>
+            </div>
+          </div>  
+          <div id="footer-logo">
+            <a class="navbar-brand" href="#">
+            <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+          </div>
+        </div>
+        <div id="footer-api-links">
+        </div> 
+      </div>
+    <!-- </div> -->
+  </body>
+</html>
